@@ -10,6 +10,7 @@ export async function GET() {
       data: earthquakes,
     });
   } catch (error) {
+    console.error("Error al obtener sismos de USGS:", error);
     return NextResponse.json(
       { error: "Error al obtener los eventos sísmicos" },
       { status: 500 },
