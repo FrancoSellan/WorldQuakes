@@ -15,10 +15,10 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="relative z-50 flex items-center justify-between border-b border-black/10 bg-white px-4 py-3 dark:border-white/10 dark:bg-black sm:px-6">
+    <header className="relative z-50 flex items-center justify-between border-b border-white/10 bg-zinc-900 px-4 py-3 sm:px-6">
       <Link href="/" className="flex items-center gap-2">
         <Image src="/logo/logo.png" alt="WorldQuakes logo" width={32} height={32} priority />
-        <span className="text-lg font-semibold text-black dark:text-zinc-50">
+        <span className="text-lg font-semibold text-zinc-50">
           WorldQuakes
         </span>
       </Link>
@@ -28,7 +28,7 @@ export default function Navbar() {
           <Link
             key={link.href}
             href={link.href}
-            className="text-sm font-medium text-zinc-600 transition-colors hover:text-black dark:text-zinc-400 dark:hover:text-zinc-50"
+            className="text-sm font-medium text-zinc-400 transition-colors hover:text-zinc-50"
           >
             {link.label}
           </Link>
@@ -38,7 +38,7 @@ export default function Navbar() {
       <button
         type="button"
         onClick={() => setIsMenuOpen((open) => !open)}
-        className="flex items-center justify-center rounded-md p-2 text-zinc-600 hover:bg-black/5 dark:text-zinc-400 dark:hover:bg-white/10 sm:hidden"
+        className="flex items-center justify-center rounded-md p-2 text-zinc-400 hover:bg-white/10 sm:hidden"
         aria-label="Abrir menú"
         aria-expanded={isMenuOpen}
       >
@@ -59,13 +59,13 @@ export default function Navbar() {
       </button>
 
       {isMenuOpen && (
-        <nav className="absolute inset-x-0 top-full flex flex-col border-b border-black/10 bg-white p-4 dark:border-white/10 dark:bg-black sm:hidden">
+        <nav className="absolute inset-x-0 top-full flex flex-col border-b border-white/10 bg-zinc-900 p-4 sm:hidden">
           {NAV_LINKS.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               onClick={() => setIsMenuOpen(false)}
-              className="py-2 text-sm font-medium text-zinc-600 hover:text-black dark:text-zinc-400 dark:hover:text-zinc-50"
+              className="py-2 text-sm font-medium text-zinc-400 hover:text-zinc-50"
             >
               {link.label}
             </Link>
