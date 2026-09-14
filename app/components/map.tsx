@@ -18,16 +18,12 @@ export default function Map() {
     const map = new mapboxgl.Map({
       container: mapContainerRef.current,
       style: "mapbox://styles/francosellan/cmu1e3ip000yj01qo8g408bis",
-      projection: "globe",
+      projection: "mercator",
       zoom: 1,
       center: [30, 15],
     });
 
     map.addControl(new mapboxgl.NavigationControl());
-
-    map.on("style.load", () => {
-      map.setFog({});
-    });
 
     mapRef.current = map;
 
@@ -37,5 +33,5 @@ export default function Map() {
     };
   }, []);
 
-  return <div ref={mapContainerRef} className="absolute inset-0 h-full w-full" />;
+  return <div ref={mapContainerRef} className="h-full w-full" />;
 }
