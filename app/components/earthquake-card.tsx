@@ -36,6 +36,7 @@ export function EarthquakeCard({ earthquake, onClose }: EarthquakeCardProps) {
       <CardFooter className="flex-col gap-2">
         <Button
           className="w-full"
+          nativeButton={false}
           render={<a href={earthquake.url} target="_blank" rel="noreferrer" />}
         >
           Ver en USGS
